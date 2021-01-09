@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.API", "1.API", "{ACBDD7A0-3EF0-421F-82BA-893DE493715B}"
 EndProject
@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.- Application", "2.- Application", "{EFA091E7-65AC-4B2A-837A-E26527FEB925}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.OxiServi", "Application.OxiServi\Application.OxiServi.csproj", "{F5B919AB-A560-443C-8A5E-9EBB60E073F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Northwind", "Application.OxiServi\Application.Northwind.csproj", "{F5B919AB-A560-443C-8A5E-9EBB60E073F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{C6DC0201-40E8-42EB-814D-92C97E67BAB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.OxiServi", "Domain.OxiServi\Domain.OxiServi.csproj", "{591F219E-F330-42F2-BD5A-E952C7482D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Northwind", "Domain.OxiServi\Domain.Northwind.csproj", "{591F219E-F330-42F2-BD5A-E952C7482D7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Core.OxiServi", "Domain.Core.OxiServi\Domain.Core.OxiServi.csproj", "{45250E04-FC44-4423-B637-769FFB3DE78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Core.Northwind", "Domain.Core.OxiServi\Domain.Core.Northwind.csproj", "{45250E04-FC44-4423-B637-769FFB3DE78A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Infra", "4.Infra", "{9C87EA2D-F468-4704-A915-637A165A51D8}"
 EndProject
@@ -23,13 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1.Persistence", "4.1.Pers
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2.CrossCutting", "4.2.CrossCutting", "{512BAB79-E032-4A9D-91F6-C98AB7BCD8AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.Utility.OxiServi", "CrossCutting.Utility.OxiServi\CrossCutting.Utility.OxiServi.csproj", "{B4EA98BD-192F-4690-BB16-DFBFE6437088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.Utility.Northwind", "CrossCutting.Utility.OxiServi\CrossCutting.Utility.Northwind.csproj", "{B4EA98BD-192F-4690-BB16-DFBFE6437088}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.Services.OxiServi", "CrossCutting.Services.OxiServi\CrossCutting.Services.OxiServi.csproj", "{BA04F4BB-7511-408E-92AE-7CB7C4748EF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.Services.Northwind", "CrossCutting.Services.OxiServi\CrossCutting.Services.Northwind.csproj", "{BA04F4BB-7511-408E-92AE-7CB7C4748EF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC.OxiServi", "CrossCutting.IoC.OxiServi\CrossCutting.IoC.OxiServi.csproj", "{F31210CA-E290-4610-8479-FE937C49F7CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting.IoC.Northwind", "CrossCutting.IoC.OxiServi\CrossCutting.IoC.Northwind.csproj", "{F31210CA-E290-4610-8479-FE937C49F7CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.OxiServi", "Persistence.OxiServi\Persistence.OxiServi.csproj", "{D6192F71-FC8D-41EC-A8D6-71B898F123E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence.Northwind", "Persistence.OxiServi\Persistence.Northwind.csproj", "{D6192F71-FC8D-41EC-A8D6-71B898F123E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

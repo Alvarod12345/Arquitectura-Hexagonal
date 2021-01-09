@@ -11,6 +11,8 @@ using Domain.OxiServi.AggregatesModel.ProviderAggregate;
 using Domain.OxiServi.AggregatesModel.UserAggregate;
 using Domain.OxiServi.AggregatesModel.CotizacionAggregate;
 
+using Domain.OxiServi.AggregatesModel.SuppliersAggregate;
+
 
 using Persistence.OxiServi.Repository;
 using System;
@@ -83,6 +85,10 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
                    .InstancePerLifetimeScope();
             builder.Register(c => new TipoProductoRepository(connectionString))
                    .As<ITipoProductoRepository>()
+                   .InstancePerLifetimeScope();
+
+            builder.Register(c => new SupplierRepository(connectionString))
+                   .As<ISupplierRepository>()
                    .InstancePerLifetimeScope();
         }
     }

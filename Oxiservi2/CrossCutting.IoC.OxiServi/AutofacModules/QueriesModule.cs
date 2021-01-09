@@ -17,6 +17,8 @@ using Application.OxiServi.Queries.Distrito;
 using Application.OxiServi.Queries.Implemento;
 using Application.OxiServi.Queries.TipoProducto;
 
+using Application.OxiServi.Queries.Supplier;
+
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
     public class QueriesModule : Autofac.Module
@@ -79,6 +81,10 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
             builder.Register(c => new TipoProductoQueries(_queriesConnectionString))
                    .As<ITipoProductoQueries>()
                    .InstancePerLifetimeScope();
+            builder.Register(c => new SupplierQueries(_queriesConnectionString))
+                    .As<ISupplierQueries>()
+                    .InstancePerLifetimeScope();
+
         }
     } 
 }

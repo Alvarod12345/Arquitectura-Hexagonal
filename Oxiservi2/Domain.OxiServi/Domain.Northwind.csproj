@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.OxiServi.csproj" />
+    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.Northwind.csproj" />
   </ItemGroup>
 
 </Project>

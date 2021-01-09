@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CrossCutting.Utility.OxiServi\CrossCutting.Utility.OxiServi.csproj" />
-    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.OxiServi.csproj" />
-    <ProjectReference Include="..\Domain.OxiServi\Domain.OxiServi.csproj" />
+    <ProjectReference Include="..\CrossCutting.Utility.OxiServi\CrossCutting.Utility.Northwind.csproj" />
+    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.Northwind.csproj" />
+    <ProjectReference Include="..\Domain.OxiServi\Domain.Northwind.csproj" />
   </ItemGroup>
 
 </Project>

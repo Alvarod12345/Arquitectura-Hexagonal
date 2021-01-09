@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CrossCutting.Utility.OxiServi\CrossCutting.Utility.OxiServi.csproj" />
+    <ProjectReference Include="..\CrossCutting.Utility.OxiServi\CrossCutting.Utility.Northwind.csproj" />
   </ItemGroup>
 
 </Project>

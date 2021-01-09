@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.OxiServi\Application.OxiServi.csproj" />
-    <ProjectReference Include="..\CrossCutting.Services.OxiServi\CrossCutting.Services.OxiServi.csproj" />
-    <ProjectReference Include="..\Persistence.OxiServi\Persistence.OxiServi.csproj" />
+    <ProjectReference Include="..\Application.OxiServi\Application.Northwind.csproj" />
+    <ProjectReference Include="..\CrossCutting.Services.OxiServi\CrossCutting.Services.Northwind.csproj" />
+    <ProjectReference Include="..\Persistence.OxiServi\Persistence.Northwind.csproj" />
   </ItemGroup>
 
   <ItemGroup>

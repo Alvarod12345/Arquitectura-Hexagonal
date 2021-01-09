@@ -22,9 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CrossCutting.IoC.OxiServi\CrossCutting.IoC.OxiServi.csproj" />
-    <ProjectReference Include="..\CrossCutting.Services.OxiServi\CrossCutting.Services.OxiServi.csproj" />
-    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.OxiServi.csproj" />
+    <ProjectReference Include="..\CrossCutting.IoC.OxiServi\CrossCutting.IoC.Northwind.csproj" />
+    <ProjectReference Include="..\CrossCutting.Services.OxiServi\CrossCutting.Services.Northwind.csproj" />
+    <ProjectReference Include="..\Domain.Core.OxiServi\Domain.Core.Northwind.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
