@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title>ViewData.Title</title>
+    <style>
+        table tr:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        table tr:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+
+        /*<![CDATA[*/
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Force Outlook to provide a "view in browser" menu link. */
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ExternalClass {
+            width: 100%;
+        }
+
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+        /* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+        #backgroundTable {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            line-height: 100% !important;
+        }
+
+        img {
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        a img {
+            border: none;
+        }
+
+        .image_fix {
+            display: block;
+        }
+
+        /* Bring inline: Yes. p {
+            margin: 1em 0;
+        } */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: black !important;
+        }
+
+            h1 a,
+            h2 a,
+            h3 a,
+            h4 a,
+            h5 a,
+            h6 a {
+                color: blue !important;
+            }
+
+                h1 a:active,
+                h2 a:active,
+                h3 a:active,
+                h4 a:active,
+                h5 a:active,
+                h6 a:active {
+                    color: red !important;
+                    /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
+                }
+
+                h1 a:visited,
+                h2 a:visited,
+                h3 a:visited,
+                h4 a:visited,
+                h5 a:visited,
+                h6 a:visited {
+                    color: purple !important;
+                    /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
+                }
+
+        table td {
+            border-collapse: collapse;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        a {
+            color: orange;
+        }
+
+            a:link {
+                color: orange;
+            }
+
+            a:visited {
+                color: blue;
+            }
+
+            a:hover {
+                color: green;
+            }
+
+        #example1 {
+            border: 2px solid green;
+            padding: 10px;
+            padding-bottom: 2px;
+            border-radius: 10px;
+            min-width: 180px;
+            min-height: 130px;
+        }
+
+        /*]]>*/
+    </style>
+</head>
+
+<body style='background: #f4f7f9; font-family: Helvetica Neue, Helvetica, Arial;'>
+    <table align='center' bgcolor='#f4f7f9' border='0' cellpadding='0' cellspacing='0' id='backgroundTable'
+           style='background: #f4f7f9;' width='100%'>
+        <tr>
+            <td align='center'>
+                <center>
+                    <table border='0' cellpadding='30' cellspacing='0'
+                           style='margin-left: auto;margin-right: auto;width:600px;text-align:center;color:black;width:800px!important'
+                           width='600'>
+                        <tr>
+                            <td align='left' style='background: #ffffff; border: 1px solid #dce1e5;' valign='top'
+                                width='900px'>
+
+                                <table border='0' width='100%' style="color:black">
+                                    <tr>
+                                        <td style="width:400px">
+                                            <img src="../Images/LOGO2.png" style="width:400px;height:120px" />
+                                            <div style="font-size:11px;color:darkgreen;font-weight:bold">
+                                                <div style="text-align:center">
+                                                    MZ G Lote 55 Urb. Jardines de San Juan - Lima
+                                                </div>
+                                                <div style="text-align:center">
+                                                    San Juan de Lurigancho - Lima
+                                                </div>
+                                                <div style="text-align:center">
+                                                    RPM: 990 892 717 / 990 892 713 RPC: 982 332 102
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+                                        <td style="width:170px;color:#5ABD8C;font-weight:bold;font-size:25px;width: 70px;">
+                                            <div id="example1">
+                                                <div style="color:green;font-weight:bold;font-size:20px;text-align:center;margin-bottom:15%;margin-top:5%">
+                                                    R.U.C. 2060287069
+                                                </div>
+                                                <div style="background-color:lightgreen;color:darkgreen;font-weight:bold;font-size:17px;text-align:center">
+                                                    C O T I Z A C I O N
+                                                </div>
+                                                <div style="color:darkgreen;font-weight:bold;font-size:16px;margin-top:15%;text-align:left">
+                                                    0001- <span style="color:red;font-weight:900;margin-left:20%;font-size:14px;">
+                                                        N&#8728;
+                                                        {numero}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border='0' width='100%' style="color:black;table-layout:fixed;width:900px">
+                                    <tr>
+                                        <td style="width:65%;color:#1f3abb;font-size:22px">
+                                            <div style="color:darkgreen;font-size:12px;margin-bottom:5px;display:block;border:none">
+                                                <span style="width:10%">
+                                                    Se&ntilde;or(es) :
+                                                </span>
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;width:80%;float:right">
+                                                    {FullName}
+                                                </span>
+                                            </div>
+                                            <div style="color:darkgreen;font-size:12px;margin-bottom:5px">
+                                                <span style="width:10%">
+                                                    Tipo Documento:
+                                                </span>
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;width:80%;float:right">
+                                                    {TipoDocumento}
+                                                </span>
+                                            </div>
+                                            <div style="color:darkgreen;font-size:12px;margin-bottom:5px">
+                                                <span style="width:10%">
+                                                    N&#176; D.N.I :
+                                                </span>
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;width:80%;float:right">
+                                                    {D.N.I}
+                                                </span>
+                                            </div>
+                                            <div style="color:darkgreen;font-size:12px;margin-bottom:5px">
+                                                <span style="width:10%">
+                                                    Direccio&#769;n :
+                                                </span>
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;width:80%;float:right">
+                                                    {Direccion}
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td style="width:50px"></td>
+                                        <td style="width:35%;color:#1f3abb;font-size:22px">
+                                            <div style="color:darkgreen;font-size:12px;text-align:center;margin-top:10px">
+                                                <span style="">
+                                                    Lima
+                                                </span>
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;min-width:30px">
+                                                    {dia}
+                                                </span>
+                                                de
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;min-width:30px">
+                                                    {mes}
+                                                </span>
+                                                del 20
+                                                <span style="border-bottom:2px dotted darkgreen;color:black;min-width:30px">
+                                                    {anio}
+                                                </span>
+                                            </div>
+                                            <div style="color:darkgreen;font-size:12px;margin-left:10px;margin-top:10px">
+                                                <div style="color:darkgreen;font-size:12px;margin-bottom:5px">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table border='' width='100%'
+                                       style="color:black;table-layout:fixed;font-size:12px;margin-top:20px;border:1px solid darkgreen;text-align:center;border-collapse: collapse;"
+                                       class="table table-bordered">
+                                    <thead>
+                                        <tr style="border-radius: 30px;">
+                                            <th style="background-color:lightgreen;color:#1f3abb;font-weight:bold;font-size:9.5px;border:1px solid #1f3abb;border-collapse: collapse; width:80px; max-width:100px !important">
+                                                SERIE
+                                            </th>
+                                            <th style="background-color:lightgreen;color:#1f3abb;font-weight:bold;font-size:9.5px;border:1px solid #1f3abb;border-collapse: collapse;  width:500px; max-width:600px !important">
+                                                Descripción (Capacidad Cantidad)
+                                            </th>
+                                            <th style="background-color:lightgreen;color:#1f3abb;font-weight:bold;font-size:9.5px;border:1px solid #1f3abb;border-collapse: collapse;width:100px; max-width:80px !important">
+                                                P. UNITARIO
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {ProductosTable}
+                                    </tbody>
+                                </table>
+                                <table border='' width='100%' style="border:none" class="">
+                                    <thead>
+                                        <tr>
+                                            <th style="border:none;width:200px ;max-width:200px !important;border:none;vertical-align:top">
+                                                <div id="">
+                                                    <div style="color:green;font-weight:bold;font-size:13px;text-align:center;margin-bottom:2px;margin-top:10px">
+                                                        CORP GRAFICA AGUILA E.I.R.L
+                                                    </div>
+                                                    <div style="font-size:11px;color:green;">
+                                                        R.U.C. 20511781737 CEL: 989377094
+                                                    </div>
+                                                    <div style="font-size:11px;color:green;">
+                                                        SERIE: 0001 del 006501 al 007000
+                                                    </div>
+                                                    <div style="font-size:11px;color:green;text-align:center">
+                                                        N° AUT. 13961729023
+                                                    </div>
+                                                    <div style="font-size:11px;color:green;text-align:center">
+                                                        F.I. 20/05/2019
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th style="border:none; min-width:500px !important;border:none;vertical-align:top">
+                                                <div style="text-align:center;vertical-align:top">
+                                                    <div style="color:green;font-weight:bold;font-size:13px;text-align:center;margin-bottom:2px;margin-top:10px">
+                                                        CANCELADO
+                                                    </div>
+                                                    <div style="color:darkgreen;font-size:12px;text-align:center;margin-top:10px">
+                                                        <span style="">
+                                                            Lima
+                                                        </span>
+                                                        <span style="border-bottom:2px dotted darkgreen;color:black;display:inline-block;min-width:40px">
+                                                            {dia}
+                                                        </span>
+                                                        de
+                                                        <span style="border-bottom:2px dotted darkgreen;color:black;display:inline-block;min-width:60px">
+                                                            {mes}
+                                                        </span>
+                                                        del 20
+                                                        <span style="border-bottom:2px dotted darkgreen;color:black;display:inline-block;min-width:20px">
+                                                            {anio}
+                                                        </span>
+                                                    </div>
+                                                    <div style="color:darkgreen;font-size:12px;text-align:center;margin-top:10px">
+                                                        <span style="border-bottom:2px dotted darkgreen;color:black;display:inline-block;min-width:240px">
+                                                            <img src="../Images/mocked-firma.png"
+                                                                 style="width:180px;height:90px" />
+                                                        </span>
+                                                    </div>
+                                                    <div style="color:darkgreen;font-size:12px;text-align:center;">
+                                                        p. OXISERVI S.R.L.
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th style=" border:none;width:200px; min-width:100px !important;border:none;vertical-align:baseline;margin-top:20px;display:block ">
+                                                <div>
+                                                    <table style="border-collapse: collapse;color:darkgreen;border-radius: 12px;border-style: hidden;box-shadow: 0 0 0 1px;margin-top:2px">
+                                                        <tr style="height:25px;width:200px;padding-top: 0px;vertical-align: baseline;">
+                                                            <td style="font-weight:bold;font-size:9.5px;border:1.7px solid darkgreen;border-collapse: collapse; width:90px; max-width:100px !important;border-style: dotted;">
+                                                                TOTAL
+                                                            </td>
+                                                            <td style="font-weight:bold;font-size:9.5px;border:1.7px solid darkgreen;border-collapse: collapse; width:140px; max-width:100px !important;border-style: dotted;">
+                                                                {total}
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
