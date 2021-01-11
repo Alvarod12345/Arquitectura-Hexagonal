@@ -29,5 +29,13 @@ namespace API.Controllers
             var result = await _supplierQueries.GetAll();
             return Ok(result);
         }
+
+        [HttpPost]//Crear
+        [Route("Create")]
+        public async Task<IActionResult> Create([FromBody] CreateSupplierCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
     }
 }
