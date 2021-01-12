@@ -1,39 +1,38 @@
-﻿using Application.Northwind.Commands.Supplier;
-using Application.OxiServi.Commands.Supplier;
-using Application.OxiServi.Queries.Base;
-using Application.OxiServi.Queries.Supplier;
+﻿using Application.Northwind.Commands.Category;
+using Application.Northwind.Queries.Category;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace API.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Supplier")]
-    public class SupplierController : ControllerBase
+    [Route("api/Category")]
+    public class CategoryController :  ControllerBase
     {
-        public ISupplierQueries _supplierQueries;
+        public ICategoryQueries _categoryQueries;
         public IMediator _mediator;
-        public SupplierController(ISupplierQueries providerQueries, IMediator mediator)
+        
+        public CategoryController(ICategoryQueries categoryQueries, IMediator mediator)
         {
-            _supplierQueries = providerQueries;
+            _categoryQueries = categoryQueries;
             _mediator = mediator;
         }
+
         [HttpGet]//Lista
         [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _supplierQueries.GetAll();
+            var result = await _categoryQueries.GetAll();
             return Ok(result);
         }
 
         [HttpPost]//Crear
         [Route("Create")]
-        public async Task<IActionResult> Create([FromBody] CreateSupplierCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateCategoryCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -41,7 +40,7 @@ namespace API.Controllers
 
         [HttpPut]//Actualizar
         [Route("Update")]
-        public async Task<IActionResult> Update([FromBody] UpdateSupplierCommand command)
+        public async Task<IActionResult> Update([FromBody] UpdateCategoryCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -49,7 +48,7 @@ namespace API.Controllers
 
         [HttpDelete]//Crear
         [Route("Delete")]
-        public async Task<IActionResult> Delete([FromBody] DeleteSupplierCommand command)
+        public async Task<IActionResult> Delete([FromBody] DeleteCategoryCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

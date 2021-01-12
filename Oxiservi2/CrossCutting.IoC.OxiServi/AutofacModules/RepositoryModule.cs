@@ -12,8 +12,7 @@ using Domain.OxiServi.AggregatesModel.UserAggregate;
 using Domain.OxiServi.AggregatesModel.CotizacionAggregate;
 
 using Domain.OxiServi.AggregatesModel.SuppliersAggregate;
-
-
+using Domain.OxiServi.AggregatesModel.CategoryAggregate;
 using Persistence.OxiServi.Repository;
 using System;
 using System.Collections.Generic;
@@ -26,6 +25,7 @@ using Domain.OxiServi.AggregatesModel.DetalleTipoProductoAggregate;
 using Domain.OxiServi.AggregatesModel.DistritoAggregate;
 using Domain.OxiServi.AggregatesModel.ImplementoAggregate;
 using Domain.OxiServi.AggregatesModel.TipoProductoAggregate;
+using Persistence.Northwind.Repository;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -89,6 +89,9 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
 
             builder.Register(c => new SupplierRepository(connectionString))
                    .As<ISupplierRepository>()
+                   .InstancePerLifetimeScope();
+            builder.Register(c => new CategoryRepository(connectionString))
+                   .As<ICategoryRepository>()
                    .InstancePerLifetimeScope();
         }
     }

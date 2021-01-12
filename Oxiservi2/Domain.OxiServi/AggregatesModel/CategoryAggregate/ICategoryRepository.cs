@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Domain.Northwind.AggregatesModel.CategoryAggregate
+namespace Domain.OxiServi.AggregatesModel.CategoryAggregate
 {
-    class ICategoryRepository
+    public interface ICategoryRepository
     {
+        Task<int> Create(Category category);
+        Task<int> Update(Category category);
+        Task<int> Delete(Category category);
     }
 }

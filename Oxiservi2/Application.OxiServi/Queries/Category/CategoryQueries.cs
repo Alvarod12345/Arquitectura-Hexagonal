@@ -3,26 +3,26 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-namespace Application.OxiServi.Queries.Supplier
+
+namespace Application.Northwind.Queries.Category
 {
-    public class SupplierQueries : ISupplierQueries
+    public class CategoryQueries : ICategoryQueries
     {
         private string _connectionString = string.Empty;
-        public SupplierQueries(string constr)
+        public CategoryQueries(string constr)
         {
             _connectionString = !string.IsNullOrWhiteSpace(constr) ? constr : throw new ArgumentNullException(nameof(constr));
         }
-        public async Task<IEnumerable<SupplierViewModel>> GetAll()
+
+        public async Task<IEnumerable<CategoryViewModel>> GetAll()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
                 DynamicParameters parameter = new DynamicParameters();
-                return await connection.QueryAsync<SupplierViewModel>(@"[SP_Select_Supplier]", parameter, commandType: CommandType.StoredProcedure);
+                return await connection.QueryAsync<CategoryViewModel>(@"[SP_Select_Category]", parameter, commandType: CommandType.StoredProcedure);
             }
         }
     }

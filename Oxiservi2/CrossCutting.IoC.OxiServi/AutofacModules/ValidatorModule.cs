@@ -12,6 +12,7 @@ using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Application.Northwind.Commands.Category;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -34,6 +35,18 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
             builder.RegisterType<DeleteSupplierValidation>()
                 .As<AbstractValidator<DeleteSupplierCommand>>()
                 .AsImplementedInterfaces();
+
+            builder.RegisterType<CreateCategoryValidation>()
+                .As<AbstractValidator<CreateCategoryCommand>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<UpdateCategoryValidation>()
+                .As<AbstractValidator<UpdateCategoryCommand>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<DeleteCategoryValidation>()
+               .As<AbstractValidator<DeleteCategoryCommand>>()
+               .AsImplementedInterfaces();
 
             //builder.RegisterType<CreateProviderValidation>()
             //    .As<AbstractValidator<CreateProviderCommand>>()

@@ -11,6 +11,9 @@ using Application.OxiServi.Commands.User;
 
 using Application.OxiServi.Commands.Supplier;
 using Application.Northwind.Commands.Supplier;
+
+using Application.Northwind.Commands.Category;
+
 using Autofac;
 using MediatR;
 using System;
@@ -72,6 +75,12 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
             builder.RegisterAssemblyTypes(typeof(UpdateSupplierCommand).GetTypeInfo().Assembly)
            .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(DeleteSupplierCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(CreateCategoryCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(UpdateCategoryCommand).GetTypeInfo().Assembly)
+           .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(DeleteCategoryCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
         }
     }
