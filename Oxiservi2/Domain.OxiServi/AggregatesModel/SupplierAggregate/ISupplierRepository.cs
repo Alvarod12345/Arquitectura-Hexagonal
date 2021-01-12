@@ -6,7 +6,8 @@ namespace Domain.OxiServi.AggregatesModel.SuppliersAggregate
 {
     public interface ISupplierRepository
     {
-        Task<int> Create(Supplier provider);
-        Task<int> Update(Supplier provider);
+        Task<int> Create(Supplier supplier);
+        Task<int> Update(Supplier supplier);
+        Task<int> Delete(Supplier supplier);
     }
 }

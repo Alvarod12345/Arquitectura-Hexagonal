@@ -8,6 +8,9 @@ using Application.OxiServi.Commands.Movimiento;
 using Application.OxiServi.Commands.Producto;
 using Application.OxiServi.Commands.Recarga;
 using Application.OxiServi.Commands.User;
+
+using Application.OxiServi.Commands.Supplier;
+using Application.Northwind.Commands.Supplier;
 using Autofac;
 using MediatR;
 using System;
@@ -62,6 +65,13 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
             builder.RegisterAssemblyTypes(typeof(DesactivateTipoProductoCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(DeleteDetalleTipoProductoCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(CreateSupplierCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(UpdateSupplierCommand).GetTypeInfo().Assembly)
+           .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(DeleteSupplierCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
         }
     }

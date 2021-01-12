@@ -22,7 +22,7 @@ namespace Domain.OxiServi.AggregatesModel.SuppliersAggregate
         public void Create(string CompanyName, string ContactName, string ContactTitle, string Address, string City, string Region, string PostalCode, string Country, string Phone, string Fax, string HomePage)
         {
             this.CompanyName = CompanyName;
-            this.CompanyName = ContactName;
+            this.ContactName = ContactName;
             this.ContactTitle = ContactTitle;
             this.Address = Address;
             this.City = City;
@@ -36,8 +36,9 @@ namespace Domain.OxiServi.AggregatesModel.SuppliersAggregate
 
         public void Update(int SupplierId, string CompanyName, string ContactName, string ContactTitle, string Address, string City, string Region, string PostalCode, string Country, string Phone, string Fax, string HomePage)
         {
+            this.SupplierId = SupplierId;
             this.CompanyName = CompanyName;
-            this.CompanyName = ContactName;
+            this.ContactName = ContactName;
             this.ContactTitle = ContactTitle;
             this.Address = Address;
             this.City = City;
@@ -47,6 +48,11 @@ namespace Domain.OxiServi.AggregatesModel.SuppliersAggregate
             this.Phone = Phone;
             this.Fax = Fax;
             this.HomePage = HomePage;
+        }
+
+        public void Delete(int SupplierId)
+        {
+            this.SupplierId = SupplierId;
         }
     }
 }

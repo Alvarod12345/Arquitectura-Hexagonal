@@ -4,6 +4,9 @@ using Application.OxiServi.Commands.Producto;
 using Application.OxiServi.Commands.Provider;
 using Application.OxiServi.Commands.User;
 using Application.OxiServi.Validations;
+using Application.Northwind.Validations;
+using Application.OxiServi.Commands.Supplier;
+using Application.Northwind.Commands.Supplier;
 using Autofac;
 using FluentValidation;
 using System;
@@ -19,6 +22,19 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
             builder.RegisterType<CreateUserValidation>()
                 .As<AbstractValidator<CreateUserCommand>>()
                 .AsImplementedInterfaces();
+
+            builder.RegisterType<CreateSupplierValidation>()
+                .As<AbstractValidator<CreateSupplierCommand>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<UpdateSupplierValidation>()
+                .As<AbstractValidator<UpdateSupplierCommand>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<DeleteSupplierValidation>()
+                .As<AbstractValidator<DeleteSupplierCommand>>()
+                .AsImplementedInterfaces();
+
             //builder.RegisterType<CreateProviderValidation>()
             //    .As<AbstractValidator<CreateProviderCommand>>()
             //    .AsImplementedInterfaces();

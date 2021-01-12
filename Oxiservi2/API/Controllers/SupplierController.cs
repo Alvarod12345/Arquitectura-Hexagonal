@@ -1,4 +1,5 @@
-﻿using Application.OxiServi.Commands.Supplier;
+﻿using Application.Northwind.Commands.Supplier;
+using Application.OxiServi.Commands.Supplier;
 using Application.OxiServi.Queries.Base;
 using Application.OxiServi.Queries.Supplier;
 using MediatR;
@@ -33,6 +34,22 @@ namespace API.Controllers
         [HttpPost]//Crear
         [Route("Create")]
         public async Task<IActionResult> Create([FromBody] CreateSupplierCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPut]//Crear
+        [Route("Update")]
+        public async Task<IActionResult> Update([FromBody] UpdateSupplierCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete]//Crear
+        [Route("Delete")]
+        public async Task<IActionResult> Delete([FromBody] DeleteSupplierCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

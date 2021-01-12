@@ -23,7 +23,7 @@ namespace Application.OxiServi.Queries.Supplier
             {
                 connection.Open();
                 DynamicParameters parameter = new DynamicParameters();
-                return await connection.QueryAsync<SupplierViewModel>(@"spGetSupplier", parameter, commandType: CommandType.StoredProcedure);
+                return await connection.QueryAsync<SupplierViewModel>(@"[SP_Select_Supplier]", parameter, commandType: CommandType.StoredProcedure);
             }
         }
     }

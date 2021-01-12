@@ -1,14 +1,16 @@
-﻿using MediatR;
+﻿using Domain.OxiServi.AggregatesModel.SuppliersAggregate;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Application.OxiServi.Commands.Supplier
+namespace Application.Northwind.Commands.Supplier
 {
-    [DataContract]
-    public class CreateSupplierCommand : IRequest<int>
+    public class UpdateSupplierCommand : IRequest<int>
     {
+        [DataMember]
+        public int SupplierId { get; set; }
         [DataMember]
         public string CompanyName { get; set; }
         [DataMember]

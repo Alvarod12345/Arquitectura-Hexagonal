@@ -23,25 +23,64 @@ namespace Persistence.OxiServi.Repository
             {
                 await cn.OpenAsync();
                 var parameter = new DynamicParameters();
-                parameter.Add("@NombreCompany", supplier.CompanyName, DbType.String, ParameterDirection.Input);
-                parameter.Add("@NombreContacto", supplier.ContactName, DbType.String, ParameterDirection.Input);
-                parameter.Add("@TituloContacto", supplier.ContactTitle, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Direccion", supplier.Address, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Ciudad", supplier.City, DbType.String, ParameterDirection.Input);
-                parameter.Add("@CodPostal", supplier.PostalCode, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Pais", supplier.Country, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Telefono", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@CompanyName", supplier.CompanyName, DbType.String, ParameterDirection.Input);
+                parameter.Add("@ContactName", supplier.ContactName, DbType.String, ParameterDirection.Input);
+                parameter.Add("@ContactTitle", supplier.ContactTitle, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Address", supplier.Address, DbType.String, ParameterDirection.Input);
+                parameter.Add("@City", supplier.City, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Region", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@PostalCode", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Country", supplier.Country, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Phone", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Fax", supplier.Fax, DbType.String, ParameterDirection.Input);
+                parameter.Add("@HomePage", supplier.HomePage, DbType.String, ParameterDirection.Input);
                 parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
 
-                var result = await cn.ExecuteScalarAsync<long>("[SP_Insertar_Proveedor]", parameter, commandType: CommandType.StoredProcedure);
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Insert_Supplier]", parameter, commandType: CommandType.StoredProcedure);
                 var msj = parameter.Get<int>("@msj");
                 return msj;
             }
         }
 
-        public Task<int> Update(Supplier supplier)
+        public async Task<int> Update(Supplier supplier)
         {
-            throw new NotImplementedException();
+            using (var cn = new SqlConnection(_connectionString))
+            {
+                await cn.OpenAsync();
+                var parameter = new DynamicParameters();
+                parameter.Add("@SupplierId", supplier.SupplierId, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@CompanyName", supplier.CompanyName, DbType.String, ParameterDirection.Input);
+                parameter.Add("@ContactName", supplier.ContactName, DbType.String, ParameterDirection.Input);
+                parameter.Add("@ContactTitle", supplier.ContactTitle, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Address", supplier.Address, DbType.String, ParameterDirection.Input);
+                parameter.Add("@City", supplier.City, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Region", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@PostalCode", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Country", supplier.Country, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Phone", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Fax", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@HomePage", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
+
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Update_Supplier]", parameter, commandType: CommandType.StoredProcedure);
+                var msj = parameter.Get<int>("@msj");
+                return msj;
+            }
+        }
+
+        public async Task<int> Delete(Supplier supplier)
+        {
+            using (var cn = new SqlConnection(_connectionString))
+            {
+                await cn.OpenAsync();
+                var parameter = new DynamicParameters();
+                parameter.Add("@SupplierId", supplier.SupplierId, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
+
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Delete_Supplier]", parameter, commandType: CommandType.StoredProcedure);
+                var msj = parameter.Get<int>("@msj");
+                return msj;
+            }
         }
     }
 }
