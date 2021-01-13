@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.OxiServi\Application.Northwind.csproj" />
+    <ProjectReference Include="..\CrossCutting.Services.OxiServi\CrossCutting.Services.Northwind.csproj" />
+    <ProjectReference Include="..\Persistence.OxiServi\Persistence.Northwind.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="MediatR" Version="4.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.0.3" />
+  </ItemGroup>
+
+</Project>
