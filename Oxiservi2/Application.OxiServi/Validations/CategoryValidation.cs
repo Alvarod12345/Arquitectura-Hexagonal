@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Application.Northwind.Validations
 {
-    public class CreateCategoryValidation : AbstractValidator<CreateCategoryCommand>
+    public class CreateCategoryValidation : AbstractValidator<CreateProductCommand>
     {
         public CreateCategoryValidation()
         {

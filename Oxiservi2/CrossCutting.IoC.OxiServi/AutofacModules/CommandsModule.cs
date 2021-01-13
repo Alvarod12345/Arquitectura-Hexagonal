@@ -22,6 +22,7 @@ using System.Reflection;
 using System.Text;
 using Application.OxiServi.Commands.Implemento;
 using Application.OxiServi.Commands.TipoProducto;
+using Application.Northwind.Commands.Product;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -76,11 +77,17 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
            .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(DeleteSupplierCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
-            builder.RegisterAssemblyTypes(typeof(CreateCategoryCommand).GetTypeInfo().Assembly)
+            builder.RegisterAssemblyTypes(typeof(CreateProductCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(UpdateCategoryCommand).GetTypeInfo().Assembly)
            .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(DeleteCategoryCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(CreateProductCommad).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(UpdateProductCommand).GetTypeInfo().Assembly)
+           .AsClosedTypesOf(typeof(IRequestHandler<,>));
+            builder.RegisterAssemblyTypes(typeof(DeleteProductCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
         }
     }

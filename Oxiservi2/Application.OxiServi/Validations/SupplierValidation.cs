@@ -13,7 +13,7 @@ namespace Application.Northwind.Validations
         {
             RuleFor(command => command.CompanyName).NotEmpty().WithMessage("El nombre no puede ser vacio");
 
-            RuleFor(command => command.ContactName).MaximumLength(40).WithMessage("El máximo número de caracteres es 50");
+            RuleFor(command => command.ContactName).MaximumLength(40).WithMessage("El máximo número de caracteres es 40");
             RuleFor(command => command.ContactTitle).MaximumLength(30).WithMessage("El máximo número de caracteres es 30");
             RuleFor(command => command.Address).MaximumLength(30).WithMessage("El máximo número de caracteres es 30");
             RuleFor(command => command.City).MaximumLength(60).WithMessage("El máximo número de caracteres es 60");

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Application.Northwind.Commands.Category
 {
-    public class CreateCategoryCommand : IRequest<int>
+    public class CreateProductCommand : IRequest<int>
     {
         [DataMember]
         public string CategoryName { get; set; }

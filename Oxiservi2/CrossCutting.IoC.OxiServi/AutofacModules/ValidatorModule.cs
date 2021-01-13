@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Application.Northwind.Commands.Category;
+using Application.Northwind.Commands.Product;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -37,7 +38,7 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
                 .AsImplementedInterfaces();
 
             builder.RegisterType<CreateCategoryValidation>()
-                .As<AbstractValidator<CreateCategoryCommand>>()
+                .As<AbstractValidator<CreateProductCommand>>()
                 .AsImplementedInterfaces();
 
             builder.RegisterType<UpdateCategoryValidation>()
@@ -46,6 +47,18 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
 
             builder.RegisterType<DeleteCategoryValidation>()
                .As<AbstractValidator<DeleteCategoryCommand>>()
+               .AsImplementedInterfaces();
+
+            builder.RegisterType<CreateProductValidation>()
+                .As<AbstractValidator<CreateProductCommad>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<UpdateProductValidation>()
+                .As<AbstractValidator<UpdateProductCommand>>()
+                .AsImplementedInterfaces();
+
+            builder.RegisterType<DeleteProductValidation>()
+               .As<AbstractValidator<DeleteProductCommand>>()
                .AsImplementedInterfaces();
 
             //builder.RegisterType<CreateProviderValidation>()

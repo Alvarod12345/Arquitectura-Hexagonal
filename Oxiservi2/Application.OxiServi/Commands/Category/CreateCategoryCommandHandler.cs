@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Application.Northwind.Commands.Category
 {
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand, int>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateProductCommand, int>
     {
         public ICategoryRepository _categoryRepository;
         public CreateCategoryCommandHandler(ICategoryRepository categoryRepository)
         {
             _categoryRepository = categoryRepository;
         }
-        public async Task<int> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var model = new Domain.OxiServi.AggregatesModel.CategoryAggregate.Category();
             model.Create(request.CategoryName,request.Description);

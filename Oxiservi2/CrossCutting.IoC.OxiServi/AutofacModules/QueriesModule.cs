@@ -19,6 +19,7 @@ using Application.OxiServi.Queries.TipoProducto;
 
 using Application.OxiServi.Queries.Supplier;
 using Application.Northwind.Queries.Category;
+using Application.Northwind.Queries.Product;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -87,6 +88,9 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
                     .InstancePerLifetimeScope();
             builder.Register(c => new CategoryQueries(_queriesConnectionString))
                     .As<ICategoryQueries>()
+                    .InstancePerLifetimeScope();
+            builder.Register(c => new ProductQueries(_queriesConnectionString))
+                    .As<IProductQueries>()
                     .InstancePerLifetimeScope();
 
         }

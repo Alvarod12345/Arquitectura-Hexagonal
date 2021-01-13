@@ -26,6 +26,7 @@ using Domain.OxiServi.AggregatesModel.DistritoAggregate;
 using Domain.OxiServi.AggregatesModel.ImplementoAggregate;
 using Domain.OxiServi.AggregatesModel.TipoProductoAggregate;
 using Persistence.Northwind.Repository;
+using Domain.Northwind.AggregatesModel.ProductAggregate;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -92,6 +93,9 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
                    .InstancePerLifetimeScope();
             builder.Register(c => new CategoryRepository(connectionString))
                    .As<ICategoryRepository>()
+                   .InstancePerLifetimeScope();
+            builder.Register(c => new ProductRepository(connectionString))
+                   .As<IProductRepository>()
                    .InstancePerLifetimeScope();
         }
     }

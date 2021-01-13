@@ -1,5 +1,5 @@
-﻿using Application.Northwind.Commands.Category;
-using Application.Northwind.Queries.Category;
+﻿using Application.Northwind.Commands.Product;
+using Application.Northwind.Queries.Product;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,15 +10,14 @@ using System.Threading.Tasks;
 namespace API.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Category")]
-    public class CategoryController :  ControllerBase
+    [Route("api/Product")]
+    public class ProductController : ControllerBase
     {
-        public ICategoryQueries _categoryQueries;
+        public IProductQueries _productQueries;
         public IMediator _mediator;
-        
-        public CategoryController(ICategoryQueries categoryQueries, IMediator mediator)
+        public ProductController(IProductQueries productQueries, IMediator mediator)
         {
-            _categoryQueries = categoryQueries;
+            _productQueries = productQueries;
             _mediator = mediator;
         }
 
@@ -26,13 +25,13 @@ namespace API.Controllers
         [Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _categoryQueries.GetAll();
+            var result = await _productQueries.GetAll();
             return Ok(result);
         }
 
         [HttpPost]//Crear
         [Route("Create")]
-        public async Task<IActionResult> Create([FromBody] CreateProductCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateProductCommad command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -40,15 +39,15 @@ namespace API.Controllers
 
         [HttpPut]//Actualizar
         [Route("Update")]
-        public async Task<IActionResult> Update([FromBody] UpdateCategoryCommand command)
+        public async Task<IActionResult> Update([FromBody] UpdateProductCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
         }
 
-        [HttpDelete]//Crear
+        [HttpPut]//Delete
         [Route("Delete")]
-        public async Task<IActionResult> Delete([FromBody] DeleteCategoryCommand command)
+        public async Task<IActionResult> Delete([FromBody] DeleteProductCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
