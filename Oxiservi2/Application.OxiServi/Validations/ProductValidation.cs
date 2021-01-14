@@ -15,10 +15,10 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.ProductName).MaximumLength(40).WithMessage("El máximo número de caracteres es 40");
             RuleFor(command => command.QuantityPerUnit).MaximumLength(20).WithMessage("El máximo número de caracteres es 20");
 
-            RuleFor(command => command.UnitPrice).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.UnitsInStock).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.UnitsOnOrder).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.ReoderLevel).LessThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitPrice).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitsInStock).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitsOnOrder).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.ReoderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
         }
     }
 
@@ -32,10 +32,10 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.ProductName).MaximumLength(40).WithMessage("El máximo número de caracteres es 40");
             RuleFor(command => command.QuantityPerUnit).MaximumLength(20).WithMessage("El máximo número de caracteres es 20");
 
-            RuleFor(command => command.UnitPrice).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.UnitsInStock).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.UnitsOnOrder).LessThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.ReoderLevel).LessThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitPrice).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitsInStock).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.UnitsOnOrder).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.ReoderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
         }
     }
 
