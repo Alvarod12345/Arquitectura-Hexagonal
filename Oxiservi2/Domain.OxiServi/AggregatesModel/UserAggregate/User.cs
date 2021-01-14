@@ -6,7 +6,6 @@ namespace Domain.OxiServi.AggregatesModel.UserAggregate
 {
     public class User
     {
-
         public int idUsuario { get; set; }
         public int idDetalleUsuario { get; set; }
         public string nombre { get; set; }
@@ -18,6 +17,7 @@ namespace Domain.OxiServi.AggregatesModel.UserAggregate
         public string email { get; set; }
         public string telefono { get; set; }
         public int idRol { get; set; }
+
         public void Create(string nombre, string paterno, string materno, string numDocumento, int tipoDocumento, string email,string contrasena, string telefono,int idRol)
         {
             this.nombre = nombre;
@@ -43,7 +43,7 @@ namespace Domain.OxiServi.AggregatesModel.UserAggregate
             this.contrasena = contrasena;
             this.idRol = idRol;
         }
-        public void Desactivar(int idUsuario)
+        public void Delete(int idUsuario)
         {
             this.idUsuario = idUsuario;
         }
