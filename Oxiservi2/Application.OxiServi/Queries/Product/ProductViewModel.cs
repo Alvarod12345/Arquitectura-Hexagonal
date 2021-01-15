@@ -16,7 +16,7 @@ namespace Application.Northwind.Queries.Product
         public double UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
         public int UnitsOnOrder { get; set; }
-        public int ReoderLevel { get; set; }
+        public int ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
     }
 }
