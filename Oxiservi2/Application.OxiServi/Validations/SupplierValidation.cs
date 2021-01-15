@@ -23,8 +23,6 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.Phone).MaximumLength(15).WithMessage("El máximo número de caracteres es 15");
             RuleFor(command => command.Fax).MaximumLength(24).WithMessage("El máximo número de caracteres es 24");
             RuleFor(command => command.HomePage).MaximumLength(24).WithMessage("El máximo número de caracteres es 24");
-
-            RuleFor(command => command.Phone).Matches(@"[\d]").WithMessage("El campo Phone solo acepta números");
         }
     }
 
@@ -46,7 +44,6 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.Fax).MaximumLength(24).WithMessage("El máximo número de caracteres es 24");
             RuleFor(command => command.HomePage).MaximumLength(24).WithMessage("El máximo número de caracteres es 24");
 
-            RuleFor(command => command.Phone).Matches(@"[\d]").WithMessage("El campo Phone solo acepta números");
         }
     }
 

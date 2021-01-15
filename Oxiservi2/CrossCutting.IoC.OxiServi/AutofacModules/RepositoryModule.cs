@@ -1,11 +1,5 @@
 ﻿
-
-
 using Autofac;
-using Domain.OxiServi.AggregatesModel.AuthAggregate;
-using Domain.OxiServi.AggregatesModel.UserAggregate;
-
-
 using Domain.OxiServi.AggregatesModel.SuppliersAggregate;
 using Domain.OxiServi.AggregatesModel.CategoryAggregate;
 using Domain.Northwind.AggregatesModel.ProductAggregate;
@@ -27,12 +21,6 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
         }
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new UserRepository(connectionString))
-                     .As<IUserRepository>()
-                     .InstancePerLifetimeScope();
-            builder.Register(c => new UserLoginRepository(connectionString))
-                     .As<IUserLoginRepository>()
-                     .InstancePerLifetimeScope();
             builder.Register(c => new SupplierRepository(connectionString))
                    .As<ISupplierRepository>()
                    .InstancePerLifetimeScope();

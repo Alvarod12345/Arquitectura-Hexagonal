@@ -1,6 +1,4 @@
 ﻿
-using Application.OxiServi.Commands.User;
-using Application.OxiServi.Validations;
 using Application.Northwind.Validations;
 using Application.OxiServi.Commands.Supplier;
 using Application.Northwind.Commands.Supplier;
@@ -18,10 +16,6 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<CreateUserValidation>()
-                .As<AbstractValidator<CreateUserCommand>>()
-                .AsImplementedInterfaces();
-
             builder.RegisterType<CreateSupplierValidation>()
                 .As<AbstractValidator<CreateSupplierCommand>>()
                 .AsImplementedInterfaces();
