@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Infrastructure.Filters;
-using API.Infrastructure.Jobs;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CrossCutting.IoC.OxiServi.AutofacModules;
@@ -108,8 +107,6 @@ namespace API
             });
             app.UseHangfireServer();
             app.UseHangfireDashboard();
-            var job = new JobModule();
-            job.Job(_configuration["API:connectionString"]);
         }
         private static void RegisterServices(IServiceCollection services)
         {
