@@ -19,7 +19,7 @@ namespace Application.Northwind.Commands.Product
         public async Task<int> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
             var model = new Domain.Northwind.AggregatesModel.ProductAggregate.Product();
-            model.Update(request.ProductID,request.ProductName, request.SupplierID, request.CategoryID, request.QuantityPerUnit, request.UnitPrice, request.UnitsInStock, request.UnitsOnOrder, request.ReoderLevel, request.Discontinued);
+            model.Update(request.ProductID,request.ProductName, request.SupplierID, request.CategoryID, request.QuantityPerUnit, request.UnitPrice, request.UnitsInStock, request.UnitsOnOrder, request.ReorderLevel, request.Discontinued);
 
             int validation = 0;
             if (validation >= default(int))

@@ -24,6 +24,6 @@ namespace Application.Northwind.Commands.Product
         [DataMember]
         public int UnitsOnOrder { get; set; }
         [DataMember]
-        public int ReoderLevel { get; set; }
+        public int ReorderLevel { get; set; }
     }
 }

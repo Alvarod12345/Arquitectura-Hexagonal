@@ -18,7 +18,7 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.UnitPrice).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
             RuleFor(command => command.UnitsInStock).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
             RuleFor(command => command.UnitsOnOrder).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.ReoderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.ReorderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
         }
     }
 
@@ -35,7 +35,7 @@ namespace Application.Northwind.Validations
             RuleFor(command => command.UnitPrice).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
             RuleFor(command => command.UnitsInStock).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
             RuleFor(command => command.UnitsOnOrder).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
-            RuleFor(command => command.ReoderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
+            RuleFor(command => command.ReorderLevel).GreaterThan(-1).WithMessage("El campo no puede ser negativo");
         }
     }
 

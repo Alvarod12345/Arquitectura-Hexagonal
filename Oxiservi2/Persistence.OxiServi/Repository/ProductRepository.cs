@@ -30,7 +30,7 @@ namespace Persistence.Northwind.Repository
                 parameter.Add("@UnitPrice", product.UnitPrice, DbType.Double, ParameterDirection.Input);
                 parameter.Add("@UnitsInStock", product.UnitsInStock, DbType.Int32, ParameterDirection.Input);
                 parameter.Add("@UnitsOnOrder", product.UnitsOnOrder, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@ReorderLevel", product.ReoderLevel, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@ReorderLevel", product.ReorderLevel, DbType.Int32, ParameterDirection.Input);
                 parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
 
                 var result = await cn.ExecuteScalarAsync<long>("[SP_Insert_Product]", parameter, commandType: CommandType.StoredProcedure);
@@ -68,7 +68,7 @@ namespace Persistence.Northwind.Repository
                 parameter.Add("@UnitPrice", product.UnitPrice, DbType.Double, ParameterDirection.Input);
                 parameter.Add("@UnitsInStock", product.UnitsInStock, DbType.Int32, ParameterDirection.Input);
                 parameter.Add("@UnitsOnOrder", product.UnitsOnOrder, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@ReorderLevel", product.ReoderLevel, DbType.Int32, ParameterDirection.Input);
+                parameter.Add("@ReorderLevel", product.ReorderLevel, DbType.Int32, ParameterDirection.Input);
                 parameter.Add("@Discontinued", product.Discontinued, DbType.Boolean, ParameterDirection.Input);
                 parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
 

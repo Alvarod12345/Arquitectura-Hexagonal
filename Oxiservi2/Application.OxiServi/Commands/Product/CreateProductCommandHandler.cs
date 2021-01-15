@@ -18,7 +18,7 @@ namespace Application.Northwind.Commands.Product
         public async Task<int> Handle(CreateProductCommad request, CancellationToken cancellationToken)
         {
             var model = new Domain.Northwind.AggregatesModel.ProductAggregate.Product();
-            model.Create(request.ProductName,request.SupplierID,request.CategoryID,request.QuantityPerUnit,request.UnitPrice,request.UnitsInStock,request.UnitsOnOrder,request.ReoderLevel);
+            model.Create(request.ProductName,request.SupplierID,request.CategoryID,request.QuantityPerUnit,request.UnitPrice,request.UnitsInStock,request.UnitsOnOrder,request.ReorderLevel);
 
             int validation = 0;
             if (validation >= default(int))

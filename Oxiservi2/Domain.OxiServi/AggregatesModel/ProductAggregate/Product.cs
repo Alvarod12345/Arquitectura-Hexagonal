@@ -16,14 +16,14 @@ namespace Domain.Northwind.AggregatesModel.ProductAggregate
         public double UnitPrice { get; set; }
         public int UnitsInStock { get; set; }
         public int UnitsOnOrder { get; set; }
-        public int ReoderLevel { get; set; }
+        public int ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
 
         public void Create( string ProductName, 
                            int SupplierID, int CategoryID, 
                            string QuantityPerUnit, double UnitPrice, 
                            int UnitsInStock, int UnitsOnOrder, 
-                           int ReoderLevel)
+                           int ReorderLevel)
         {
             this.ProductName = ProductName;
             this.SupplierID = SupplierID;
@@ -32,14 +32,14 @@ namespace Domain.Northwind.AggregatesModel.ProductAggregate
             this.UnitPrice = UnitPrice;
             this.UnitsInStock = UnitsInStock;
             this.UnitsOnOrder = UnitsOnOrder;
-            this.ReoderLevel = ReoderLevel;
+            this.ReorderLevel = ReorderLevel;
         }
 
         public void Update(int ProductID,string ProductName,
                            int SupplierID, int CategoryID,
                            string QuantityPerUnit, double UnitPrice,
                            int UnitsInStock, int UnitsOnOrder,
-                           int ReoderLevel, bool Discontinued)
+                           int ReorderLevel, bool Discontinued)
         {
             this.ProductID = ProductID;
             this.ProductName = ProductName;
@@ -49,7 +49,7 @@ namespace Domain.Northwind.AggregatesModel.ProductAggregate
             this.UnitPrice = UnitPrice;
             this.UnitsInStock = UnitsInStock;
             this.UnitsOnOrder = UnitsOnOrder;
-            this.ReoderLevel = ReoderLevel;
+            this.ReorderLevel = ReorderLevel;
             this.Discontinued = Discontinued;
         }
 
