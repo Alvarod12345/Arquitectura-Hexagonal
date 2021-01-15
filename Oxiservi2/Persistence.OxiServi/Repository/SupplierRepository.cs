@@ -28,7 +28,7 @@ namespace Persistence.OxiServi.Repository
                 parameter.Add("@ContactTitle", supplier.ContactTitle, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Address", supplier.Address, DbType.String, ParameterDirection.Input);
                 parameter.Add("@City", supplier.City, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Region", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Region", supplier.Region, DbType.String, ParameterDirection.Input);
                 parameter.Add("@PostalCode", supplier.PostalCode, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Country", supplier.Country, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Phone", supplier.Phone, DbType.String, ParameterDirection.Input);
@@ -54,12 +54,12 @@ namespace Persistence.OxiServi.Repository
                 parameter.Add("@ContactTitle", supplier.ContactTitle, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Address", supplier.Address, DbType.String, ParameterDirection.Input);
                 parameter.Add("@City", supplier.City, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Region", supplier.PostalCode, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Region", supplier.Region, DbType.String, ParameterDirection.Input);
                 parameter.Add("@PostalCode", supplier.PostalCode, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Country", supplier.Country, DbType.String, ParameterDirection.Input);
                 parameter.Add("@Phone", supplier.Phone, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Fax", supplier.Phone, DbType.String, ParameterDirection.Input);
-                parameter.Add("@HomePage", supplier.Phone, DbType.String, ParameterDirection.Input);
+                parameter.Add("@Fax", supplier.Fax, DbType.String, ParameterDirection.Input);
+                parameter.Add("@HomePage", supplier.HomePage, DbType.String, ParameterDirection.Input);
                 parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
 
                 var result = await cn.ExecuteScalarAsync<long>("[SP_Update_Supplier]", parameter, commandType: CommandType.StoredProcedure);
