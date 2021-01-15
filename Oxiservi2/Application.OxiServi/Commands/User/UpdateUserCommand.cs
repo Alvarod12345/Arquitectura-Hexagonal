@@ -20,14 +20,11 @@ namespace Application.OxiServi.Commands.User
         [DataMember]
         public string NumDocumento { get; set; }
         [DataMember]
-        public int TipoDocumento { get; set; }
-        [DataMember]
         public string Telefono { get; set; }
         [DataMember]
         public string Email { get; set; }
         [DataMember]
         public string Contrasena { get; set; }
-        [DataMember]
-        public int IdRol { get; set; }
+
     }
 }

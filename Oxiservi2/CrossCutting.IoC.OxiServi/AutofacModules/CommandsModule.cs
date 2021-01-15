@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using Application.Northwind.Commands.User;
 
 namespace CrossCutting.IoC.OxiServi.AutofacModules
 {
@@ -20,6 +21,14 @@ namespace CrossCutting.IoC.OxiServi.AutofacModules
         {
             builder.RegisterAssemblyTypes(typeof(CreateUserCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(UpdateUserCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+            builder.RegisterAssemblyTypes(typeof(DeleteUserCommand).GetTypeInfo().Assembly)
+            .AsClosedTypesOf(typeof(IRequestHandler<,>));
+
+
             builder.RegisterAssemblyTypes(typeof(CreateSupplierCommand).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
             builder.RegisterAssemblyTypes(typeof(UpdateSupplierCommand).GetTypeInfo().Assembly)

@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Application.OxiServi.Commands.User
+namespace Application.Northwind.Commands.User
 {
     [DataContract]
-    public class CreateUserCommand : IRequest<int>
+    public class DeleteUserCommand : IRequest<int>
     {
+        [DataMember]
+        public int idUsuario { get; set; }
         [DataMember]
         public string Nombre { get; set; }
         [DataMember]

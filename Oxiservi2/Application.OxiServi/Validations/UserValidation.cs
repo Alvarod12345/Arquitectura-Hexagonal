@@ -9,10 +9,10 @@ namespace Application.OxiServi.Validations
     {
         public CreateUserValidation()
         {
-            RuleFor(command => command.IdRol).GreaterThan(0);
-            RuleFor(command => command.IdRol).NotNull();
+            //RuleFor(command => command.IdRol).GreaterThan(0);
+            //RuleFor(command => command.IdRol).NotNull();
 
-            RuleFor(command => command.TipoDocumento).InclusiveBetween(1,6).WithMessage("El tipo de documento debe estar en el rango de 1 a 6.");
+            //RuleFor(command => command.TipoDocumento).InclusiveBetween(1,6).WithMessage("El tipo de documento debe estar en el rango de 1 a 6.");
            // RuleFor(command => command.TipoDocumento).NotEmpty().WithMessage("El tipo de documento no puede ser nulo.");
 
             RuleFor(command => command.NumDocumento).NotEmpty().WithMessage("El numero de documento no puede ser nulo o vacio.");

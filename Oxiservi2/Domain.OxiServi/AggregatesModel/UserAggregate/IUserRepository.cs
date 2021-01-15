@@ -9,7 +9,6 @@ namespace Domain.OxiServi.AggregatesModel.UserAggregate
     {
         Task<int> Create(User user);
         Task<int> Update(User user); //<int> es lo que retorna el proc de la bd
-        Task<int> Desactivar(User user);
-        Task<bool> ValidateDocumento(int tipoDocumento, string numDocumento);
+        Task<int> Delete(User user);
     }
 }

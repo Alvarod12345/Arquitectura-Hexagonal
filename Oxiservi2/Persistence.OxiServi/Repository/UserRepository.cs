@@ -24,13 +24,11 @@ namespace Persistence.OxiServi.Repository
                 parameter.Add("@paterno", user.paterno, DbType.String, ParameterDirection.Input);
                 parameter.Add("@materno", user.materno, DbType.String, ParameterDirection.Input);
                 parameter.Add("@numDocumento", user.numDocumento, DbType.String, ParameterDirection.Input);
-                parameter.Add("@tipoDocumento", user.tipoDocumento, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@telefono", user.telefono, DbType.String, ParameterDirection.Input);
+                parameter.Add("@pass", user.contrasena, DbType.String, ParameterDirection.Input);
                 parameter.Add("@email", user.email, DbType.String, ParameterDirection.Input);
-                parameter.Add("@contraseña", user.contrasena, DbType.String, ParameterDirection.Input);
-                parameter.Add("@idRol", user.idRol, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@resultId", DbType.Int64, direction: ParameterDirection.Output);
-                var result = await cn.ExecuteScalarAsync<long>("[SP_Create_Usuario]", parameter, commandType: CommandType.StoredProcedure);
+                parameter.Add("@phone", user.telefono, DbType.String, ParameterDirection.Input);
+                parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Insert_User]", parameter, commandType: CommandType.StoredProcedure);
                 var userId = parameter.Get<int>("@resultId");
                 return userId;
             }
@@ -46,45 +44,27 @@ namespace Persistence.OxiServi.Repository
                 parameter.Add("@paterno", user.paterno, DbType.String, ParameterDirection.Input);
                 parameter.Add("@materno", user.materno, DbType.String, ParameterDirection.Input);
                 parameter.Add("@numDocumento", user.numDocumento, DbType.String, ParameterDirection.Input);
-                parameter.Add("@tipoDocumento", user.tipoDocumento, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@telefono", user.telefono, DbType.String, ParameterDirection.Input);
+                parameter.Add("@pass", user.contrasena, DbType.String, ParameterDirection.Input);
                 parameter.Add("@email", user.email, DbType.String, ParameterDirection.Input);
-                parameter.Add("@contraseña", user.contrasena, DbType.String, ParameterDirection.Input);
-                parameter.Add("@idRol", user.idRol, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@resultid",DbType.Int32,direction : ParameterDirection.Output);
-                var result = await cn.ExecuteScalarAsync<long>("[SP_UPDATE_USUARIO]", parameter, commandType: CommandType.StoredProcedure);
+                parameter.Add("@phone", user.telefono, DbType.String, ParameterDirection.Input);
+                parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Update_User]", parameter, commandType: CommandType.StoredProcedure);
                 var userId = parameter.Get<int>("@resultid");
                 return userId;
             }
         }
-        public async Task<int> Desactivar(User user)
+        public async Task<int> Delete(User user)
         {
             using (var cn = new SqlConnection(_connectionString))
             {
                 await cn.OpenAsync();
                 var parameter = new DynamicParameters();
                 parameter.Add("@idUsuario", user.idUsuario, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@resultid", DbType.Int32, direction: ParameterDirection.Output);
-                var result = await cn.ExecuteScalarAsync<long>("[SP_DESACTIVAR_USUARIO]", parameter, commandType: CommandType.StoredProcedure);
-                var userId = parameter.Get<int>("@resultid");
-                return userId;
-            }
-        }
-        public async Task<bool> ValidateDocumento(int tipoDocumento, string numDocumento)
-        {
-            using (var cn = new SqlConnection(_connectionString))
-            {
-                await cn.OpenAsync();
-                var parameter = new DynamicParameters();
-                parameter.Add("@TipoDocumentoId", tipoDocumento, DbType.Int32, ParameterDirection.Input);
-                parameter.Add("@NumDocumento", numDocumento, DbType.String, ParameterDirection.Input);
-                parameter.Add("@Result", DbType.Int32, direction: ParameterDirection.Output);
-                await cn.ExecuteScalarAsync<long>("SP_Validate_Documento", parameter, commandType: CommandType.StoredProcedure);
-                var result = parameter.Get<int>("@Result");
-                if (result == 0)
-                    return false;
-                else
-                    return true;
+                parameter.Add("@msj", DbType.Int32, direction: ParameterDirection.Output);
+
+                var result = await cn.ExecuteScalarAsync<long>("[SP_Delete_User]", parameter, commandType: CommandType.StoredProcedure);
+                var msj = parameter.Get<int>("@msj");
+                return msj;
             }
         }
     }

@@ -19,8 +19,7 @@ namespace Application.OxiServi.Commands.User
         {
             var model = new Domain.OxiServi.AggregatesModel.UserAggregate.User();
             model.Update(request.idUsuario, request.Nombre, request.Paterno, request.Materno,
-                request.NumDocumento, request.TipoDocumento, request.Telefono, request.Email,
-                request.Contrasena, request.IdRol);
+                request.NumDocumento, request.Contrasena, request.Email, request.Telefono);
             return await _userRepository.Update(model);
         }
 
